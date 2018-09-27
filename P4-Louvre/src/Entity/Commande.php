@@ -36,6 +36,7 @@ class Commande
 
     /**
      * @ORM\Column(type="date")
+	 * @ControlDateVisite()
      */
     private $dateVisite;
 
