@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} | Payement OK
+{% endblock %}
+
+
+{% block body %}
+
+    <div class="container">
+
+        {# src/OC/PlatformBundle/Resources/views/formStep1.html.twig #}
+        <h1>Paiement reçu</h1>
+		
+		Vous receverez par mail vos billets.
+
+		<div class="recap">
+			{{ tabRecap|raw }}
+		</div>
+    </div>
+
+
+
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }} 
+{% endblock %}

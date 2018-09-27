@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} | Etape 3
+{% endblock %}
+
+
+{% block body %}
+
+    <div class="container">
+
+        {# src/OC/PlatformBundle/Resources/views/formStep1.html.twig #}
+        <h1><span class="stepActu">> Etape 1</span><span class="stepAutre"> > Etape 2 > Etape 3</span></h1>
+
+		<div class="recap">
+			{{ tabRecap|raw }}
+		</div>
+		<div class="billing">
+			<form action="./validation" method="POST">
+			  <script
+				src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+				data-key="pk_test_dS57aJXZLBrqwKQ0g48CV0jC"
+				data-amount="{{ total }}00"
+				data-name="Musée du Louvre"
+				data-description="Vente de billet par internet"
+				data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+				data-locale="auto"
+				data-zip-code="false"
+				data-email="{{ mailCommande }}"
+				data-currency="EUR"
+				>
+			  </script>
+			</form>
+		</div>
+    </div>
+
+
+
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }} 
+{% endblock %}

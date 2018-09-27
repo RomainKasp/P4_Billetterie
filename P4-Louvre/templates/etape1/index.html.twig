@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} | Etape 1
+{% endblock %}
+
+
+{% block body %}
+
+    <div class="container">
+
+        {# src/OC/PlatformBundle/Resources/views/formStep1.html.twig #}
+        <h1><span class="stepActu">> Etape 1</span><span class="stepAutre"> > Etape 2 > Etape 3</span></h1>
+
+		<br /> {{ message|raw }}
+        {{ form_start(form) }}
+
+		<div class="row">
+			<div class="col-sm-2">
+				{{ form_label(form.mail) }}
+			</div>
+			<div class="col-sm-4">
+				{{ form_errors(form.mail) }}
+				{{ form_widget(form.mail) }}
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-2">
+				{{ form_label(form.number_ticket) }}
+			</div>
+			<div class="col-sm-4">
+				{{ form_errors(form.number_ticket) }}
+				{{ form_widget(form.number_ticket) }}
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-2">
+				{{ form_label(form.dateVisite) }}
+				{{ form_errors(form.dateVisite) }}
+			</div>
+			<div class="col-sm-4">
+				{{ form_widget(form.dateVisite) }}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2">
+			</div>
+			<div class="col-sm-4">
+				<input type="submit" value="Etape suivante"/>
+			</div>
+		</div>
+		<div class="row" style="visibility:hidden">
+			<div class="col-sm-2">
+				{{ form_label(form.dateCommande) }}
+			</div>
+			<div class="col-sm-4">
+				{{ form_errors(form.dateCommande) }}
+				{{ form_widget(form.dateCommande) }}
+			</div>
+		</div>
+        {{ form_end(form) }}
+    </div>
+
+
+
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }} 
+	
+	<script>
+		var date = new Date();
+		var jour = date.getDate();
+		var mois = date.getMonth()+ 1;
+		var ann = date.getFullYear();
+		if (jour<10)
+			jour = "0" + jour;
+		if (mois<10)
+			mois = "0" + mois;
+			
+		date = ann + "-" + mois + "-" + jour;
+
+		document.getElementById("commande_dateCommande").value = date; 	
+
+		$( function() {
+			$( ".js-datepicke" ).datepicker();
+			$( ".js-datepicke" ).datepicker( "option", "minDate", new Date() );
+			$( ".js-datepicke" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
+		} );
+	</script>
+{% endblock %}

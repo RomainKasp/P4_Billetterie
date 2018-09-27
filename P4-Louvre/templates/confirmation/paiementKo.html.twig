@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} | Payement KO
+{% endblock %}
+
+
+{% block body %}
+
+    <div class="container">
+
+        {# src/OC/PlatformBundle/Resources/views/formStep1.html.twig #}
+        <h1>Transaction invalide</h1>
+
+		<div class="recap">
+			{{ tabRecap|raw }}
+		</div>
+		
+		<br /> 
+		<A href="javascript:history.back()">Retourner à la page de paiement</A>
+    </div>
+
+
+
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }} 
+{% endblock %}
