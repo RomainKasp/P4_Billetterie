@@ -1,0 +1,11 @@
+<?php
+namespace App\Validator\Constraints;
+use Symfony\Component\Validator\Constraint;
+/**
+ * @Annotation
+ * @package App\Validator\Constraints
+ */
+class ControlDateVisite extends Constraint
+{
+    public $message = '"{{ string }}"Veuillez saisir une autre date de visite.';
+}
