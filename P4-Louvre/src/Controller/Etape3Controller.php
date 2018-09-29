@@ -28,6 +28,11 @@ class Etape3Controller extends Controller
     public function index()
     {
 		$commande = $this->session->get('commande');
+		
+		if (is_null($commande)) {
+		    return $this->redirectToRoute('step1');
+        }
+		
 		$tickets = $commande->getTickets();
 		
 		$traitement= $this->gestionCalcul->trtTickets($this->parameterBag, $tickets);

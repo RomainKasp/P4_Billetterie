@@ -31,7 +31,11 @@ class Etape2Controller extends Controller
 		$commande = $this->session->get('commande');
 		$dateHeure = new \DateTime();
 		$demiJournee = false;
-		
+	
+		if (is_null($commande)) {
+		    return $this->redirectToRoute('step1');
+        }
+	
 		if ($commande->getDateVisite() == $commande->getDateCommande()){
 			if ($dateHeure->format("H") > 13)
 				$demiJournee = True;

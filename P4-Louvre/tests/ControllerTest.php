@@ -1,8 +1,8 @@
 <?php
-
 namespace App\Controller;
-
-class testEntite extends Controller
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\HttpFoundation\Response;
+class testEntite extends WebTestCase
 {
     public function ControllerTest()
     {
@@ -19,69 +19,67 @@ class testEntite extends Controller
 		
 		$mailComm = $commande->getMail();
 		$dateComm = $commande->getDateCommande();
-		$dateVisi = $commande->getDateVisite();
 		$jourSemm = $commande->getJourSemaineCommande();
-		
-		$this->assertEquals($valeursTests["mail"], $mailComm);
-		$this->assertEquals($valeursTests["dateCommande"], $dateComm);
-		$this->assertEquals($valeursTests["dateVisite"], $dateVisi);
-		$this->assertEquals($valeursTests["jourSemaine"], $jourSemm);
+        static::assertEquals($valeursTests["mail"], $mailComm);
+        static::assertEquals($valeursTests["dateCommande"], $dateComm);
+        static::assertEquals($valeursTests["jourSemaine"], $jourSemm);
     }
 	
 	public function testRouteFormulaire1()
     {
 		$client = static::createClient();
-		$crawler = $client->request('GET', '/');
-		$this->assertEquals(200, $crawler->getResponse()->getStatusCode());
+		$client->request('GET', '/');
+		static::assertEquals(Response::HTTP_OK, $client->getResponse()->getStatusCode());
     }
 	public function testRouteFormulaire2()
     {
 		$client = static::createClient();
-		$crawler = $client->request('GET', '/tickets');
-		$this->assertEquals(200, $crawler->getResponse()->getStatusCode());
+		$client->request('GET', '/tickets');
+        static::assertEquals(Response::HTTP_FOUND, $client->getResponse()->getStatusCode());
     }
 	public function testRoutePaiement()
     {
 		$client = static::createClient();
-		$crawler = $client->request('GET', '/paiement');
-		$this->assertEquals(500, $crawler->getResponse()->getStatusCode());
+		$client->request('GET', '/paiement');
+        static::assertEquals(Response::HTTP_FOUND, $client->getResponse()->getStatusCode());
     }
-	
-	
 	public function testRouteFormulaire1Bis()
     {
 		$client = static::createClient();
-		$crawler = $client->request('GET', '/');
-		$this->assertRegExp('Votre mail:', $crawler->getResponse()->getContent());
-    }		
-	
+		$client->request('GET', '/');
+        static::assertContains('Votre mail:', $client->getResponse()->getContent());
+    }
 	public function testEnvoiFormulaire1()
     {
 		$client = static::createClient();
 		$crawler = $client->request('GET', '/');
-		$crawler = $client->submit($form, array('mail' => 'test@domain.com',
-												'number_ticket' => 1,
-												'dateVisite' => "2022-12-01"));
-		$this->assertRegExp('Nom:', $crawler->getResponse()->getContent());
-    }	
-	
+		$form = $crawler->selectButton('Etape suivante')->form();
+		$form['commande[mail]'] = 'test@domain.com';
+		$form['commande[number_ticket]'] = 1;
+		$form['commande[dateVisite]'] = "2022-12-01";
+		$client->submit($form);
+        static::assertContains('Nom:', $client->getResponse()->getContent());
+    }
 	public function testEchecFormulaire1()
     {
 		$client = static::createClient();
-		$crawler = $client->request('GET', '/');
-		$crawler = $client->submit($form, array('mail' => 'test@domain.com',
-												'number_ticket' => 01,
-												'dateVisite' => "2020-09-08"));
-		$this->assertRegExp('Le musée est fermer le mardi', $crawler->getResponse()->getContent());
-    }	
-	
+        $crawler = $client->request('GET', '/');
+        $form = $crawler->selectButton('Etape suivante')->form();
+        $form['commande[mail]'] = 'test@domain.com';
+        $form['commande[number_ticket]'] = 1;
+        $form['commande[dateVisite]'] = "2020-09-08";
+        $client->submit($form);
+        static::assertContains('mardi', $client->getResponse()->getContent());
+    }
 	public function testEchecFormulaire1Bis()
     {
-		$client = static::createClient();
-		$crawler = $client->request('GET', '/');
-		$crawler = $client->submit($form, array('mail' => 'test@domain.com',
-												'number_ticket' => 01,
-												'dateVisite' => "2019-12-25"));
-		$this->assertRegExp('Le musée est fermer ce jour férié', $crawler->getResponse()->getContent());
-    }	
+        $client = static::createClient();
+        $crawler = $client->request('GET', '/');
+        $form = $crawler->selectButton('Etape suivante')->form();
+        $form['commande[mail]'] = 'test@domain.com';
+        $form['commande[number_ticket]'] = 1;
+        $form['commande[dateVisite]'] = "2019-12-25";
+        $client->submit($form);
+        static::assertContains('férié', $client->getResponse()->getContent());
+    }
 }
