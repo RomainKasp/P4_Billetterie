@@ -30,7 +30,7 @@ class Commande
     private $mail;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="date")
      */
     private $dateCommande;
 
