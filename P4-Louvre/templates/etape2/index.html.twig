@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block body %}
-	<h1><span class="stepAutre">> Etape 1</span><span class="stepActu"> > Etape 2</span> <span class="stepAutre">> Etape 3</span></h1>
+	<h1><span class="stepAutre">> Etape 1</span> > <span class="stepActu">Etape 2</span> <span class="stepAutre">> Etape 3</span></h1>
 	<div class="well">
 		<div class="info">
 			<br />Afin de béneficier du tarif réduit, <br /> la présentation d'une carte d’étudiant, militaire ou équivalent<br /> lors de l’entrée sera necessaire.<br /><br />
@@ -16,12 +16,14 @@
 		data-widget-tags="{{ '<div class="col-sm-12"></div>'|e }}">
 			{% for tcktField in form.tickets %}
 			
-			<div class="col-sm-2">
-				{{ form_errors(tcktField) }}
-				{{ form_widget(tcktField) }}
-				
+			<div class="row">
+				<div class="col-sm-8"></div> 
+				<div class="col-sm-2">
+					{{ form_errors(tcktField) }}
+					{{ form_widget(tcktField) }}
+					
+				</div>
 			</div>
-			
 			{% endfor %}	
 			</div>
 		<input type="hidden" id="jsData"  data-list="#tickets-fields-list"/>
