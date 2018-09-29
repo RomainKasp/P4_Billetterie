@@ -11,7 +11,7 @@ class ControlDateVisiteValidator extends ConstraintValidator
 		//Contrôle sur le mardi
         if ($value->format('w') == 2) {
             $this->context->buildViolation($constraint->message)
-                          ->setParameter('{{ string }}', 'Le musée est fermer le mardi.')
+                          ->setParameter('{{ string }}', 'Le musée est fermé le mardi.')
                           ->addViolation();
         }
 		
@@ -23,7 +23,7 @@ class ControlDateVisiteValidator extends ConstraintValidator
 		     ( ($mois == 04) AND ($jour == 01) )    ){
 				 
             $this->context->buildViolation($constraint->message)
-                          ->setParameter('{{ string }}', 'Le musée est fermer ce jour férié.')
+                          ->setParameter('{{ string }}', 'Le musée est fermé ce jour férié.')
                           ->addViolation();				 
 		}
 		

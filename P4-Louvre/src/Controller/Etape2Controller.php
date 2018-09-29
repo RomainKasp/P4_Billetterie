@@ -30,11 +30,13 @@ class Etape2Controller extends Controller
 		$nbrTicke= $this->session->get('nbrTicke');
 		$commande = $this->session->get('commande');
 		$dateHeure = new \DateTime();
+		$dateHeure->setTimezone(new \DateTimeZone('Europe/Paris'));
 		$demiJournee = false;
 	
 		if (is_null($commande)) {
 		    return $this->redirectToRoute('step1');
         }
+		//var_dump($dateHeure);die;
 	
 		if ($commande->getDateVisite() == $commande->getDateCommande()){
 			if ($dateHeure->format("H") > 13)
