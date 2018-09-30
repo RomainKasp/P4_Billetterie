@@ -74,12 +74,4 @@ class Controles
 		
 		return 0;
 	}	
-/*
-    public function gestionErreur($numErreur, $messages)
-    {
-		if ($numErreur == 0)
-			return [true, " "];
-		else
-			return [false, $messages[$numErreur] ];
-	}	*/
 }

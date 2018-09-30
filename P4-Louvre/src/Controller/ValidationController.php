@@ -9,24 +9,27 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Commande;
 use App\Service\RetourStripe;
+use App\Service\EnvoiMail;
 
 class ValidationController extends Controller
 {
     private $session;
 	private $entityManager;
 	private $retStripe;
+	private $envMail;
 	
-    public function __construct(SessionInterface $session, RetourStripe $retStripe, EntityManagerInterface $entityManager)
+    public function __construct(SessionInterface $session, RetourStripe $retStripe, EnvoiMail $envMail, EntityManagerInterface $entityManager)
     {
         $this->session = $session;
         $this->entityManager = $entityManager;
         $this->retStripe = $retStripe;
+        $this->envMail = $envMail;
     }
 	
     /**
      * @Route("/validation", name="validatePaiement")
      */
-    public function index(Request $request,  \Swift_Mailer $mailer)
+    public function index(Request $request)
     {
 		$tabRecap 	= $this->session->get('tabRecap');
 		$amount 	= $this->session->get('amount')*100;
@@ -43,23 +46,9 @@ class ValidationController extends Controller
 		// Code du cas non passant et non controlé en formulaire : 4100000000000019
 		//Validation est vrai si le payment s'est bien passé
 		if ($result){
-			
 			$commande->setPayer(true);
 			$this->entityManager->flush();
-			
-			$message = (new \Swift_Message('Musée du Louvre - Vos Billets'))
-				->setFrom('romain.kasp@gmail.com')
-				->setTo($mailCommande)
-				->setBody(
-							$this->renderView('confirmation/mail.html.twig',
-												array('datCom' => $dateCommande->format('d-m-Y'),
-												'datVisite' => $commande->getDateVisite()->format('d-m-Y'), 
-												'numCom' => $idCommande, 
-												'tabRecap' => $tabRecap,)
-												),
-							'text/html'
-							);
-			$mailer->send($message);
+			$this->envMail->send($mailCommande, $dateCommande, $commande->getDateVisite(), $idCommande, $tabRecap);
 			
 			return $this->render('confirmation/paiementOk.html.twig', [
 								'tabRecap' => $tabRecap,

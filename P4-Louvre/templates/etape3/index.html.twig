@@ -15,7 +15,7 @@
 		<div class="recap">
 			{{ tabRecap|raw }}
 		</div>
-		<div class="billing">
+		<center><div class="billing">
 			<form action="./validation" method="POST">
 			  <script
 				src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -32,7 +32,7 @@
 				>
 			  </script>
 			</form>
-		</div>
+		</div></center>
     </div>
 
 {% endblock %}

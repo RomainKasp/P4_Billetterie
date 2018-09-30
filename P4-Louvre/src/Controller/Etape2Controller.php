@@ -36,7 +36,6 @@ class Etape2Controller extends Controller
 		if (is_null($commande)) {
 		    return $this->redirectToRoute('step1');
         }
-		//var_dump($dateHeure);die;
 	
 		if ($commande->getDateVisite() == $commande->getDateCommande()){
 			if ($dateHeure->format("H") > 13)
