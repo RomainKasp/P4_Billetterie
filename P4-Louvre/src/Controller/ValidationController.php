@@ -8,22 +8,25 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Commande;
+use App\Service\RetourStripe;
 
 class ValidationController extends Controller
 {
     private $session;
 	private $entityManager;
+	private $retStripe;
 	
-    public function __construct(SessionInterface $session, EntityManagerInterface $entityManager)
+    public function __construct(SessionInterface $session, RetourStripe $retStripe, EntityManagerInterface $entityManager)
     {
         $this->session = $session;
         $this->entityManager = $entityManager;
+        $this->retStripe = $retStripe;
     }
 	
     /**
      * @Route("/validation", name="validatePaiement")
      */
-    public function index(Request $request, \Swift_Mailer $mailer)
+    public function index(Request $request,  \Swift_Mailer $mailer)
     {
 		$tabRecap 	= $this->session->get('tabRecap');
 		$amount 	= $this->session->get('amount')*100;
@@ -33,55 +36,13 @@ class ValidationController extends Controller
 		$mailCommande 	= $commande->getMail();
 		$dateCommande	= $commande->getDateCommande();
 		$idCommande 	= $commande->getCodeCommande();
-		$validation 	= true;
-
-		// Set your secret key: remember to change this to your live secret key in production
-		// See your keys here: https://dashboard.stripe.com/account/apikeys
-		\Stripe\Stripe::setApiKey("sk_test_bo8KdDDBj7K4myPuwBt5rNnr");
 		
-		// Token is created using Checkout or Elements!
-		// Get the payment token ID submitted by the form:
-		$token = $_POST['stripeToken'];
-		
-		try {
-			$charge = \Stripe\Charge::create([
-				'amount' => $amount,
-				'currency' => 'EUR',
-				'description' => 'Commande '.$idCommande." de ". $mailCommande,
-				'source' => $token,
-				'metadata' => ['order_id' => $id ],
-				'capture' => false,
-			]);
-			
-			$charge->capture();
-			//dump($charge);die;
-		}catch(\Stripe\Error\Card $e) {
-			// Since it's a decline, \Stripe\Error\Card will be caught
-			$validation 	= false;
-		} catch (\Stripe\Error\RateLimit $e) {
-			// Too many requests made to the API too quickly
-			$validation 	= false;
-		} catch (\Stripe\Error\InvalidRequest $e) {
-			// Invalid parameters were supplied to Stripe's API
-			$validation 	= false;
-		} catch (\Stripe\Error\Authentication $e) {
-			// Authentication with Stripe's API failed
-			// (maybe you changed API keys recently)
-			$validation 	= false;
-		} catch (\Stripe\Error\ApiConnection $e) {
-			// Network communication with Stripe failed
-			$validation 	= false;			
-		} catch (\Stripe\Error\Base $e) {
-			// Display a very generic error to the user, and maybe send
-			// yourself an email	
-			$validation 	= false;			
-		}catch (Exception $e) {
-			$validation 	= false;
-		}
+		//Retour de stripe (contrôle du paiement)
+		$result = $this->retStripe->tstRetour($amount, $id, $idCommande, $mailCommande);
 		
 		// Code du cas non passant et non controlé en formulaire : 4100000000000019
 		//Validation est vrai si le payment s'est bien passé
-		if ($validation && $charge->paid){
+		if ($result){
 			
 			$commande->setPayer(true);
 			$this->entityManager->flush();

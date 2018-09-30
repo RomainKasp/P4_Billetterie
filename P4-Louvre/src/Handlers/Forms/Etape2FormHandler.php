@@ -26,7 +26,6 @@ class Etape2FormHandler
 			$commande = $form->getData();
 			$this->session->set('commande', $commande);
 			
-			//$this->entityManager = $this->getDoctrine()->getManager();
 			//prépare la requête
 			$this->entityManager->persist($commande);
 			//execute la requete
