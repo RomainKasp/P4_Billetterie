@@ -19,8 +19,10 @@
         "symfony/security-bundle": "*",
         "symfony/serializer-pack": "*",
         "symfony/swiftmailer-bundle": "^3.2",
+        "symfony/translation": "*",
         "symfony/twig-bundle": "*",
         "symfony/validator": "*",
+        "symfony/var-dumper": "*",
         "symfony/web-link": "*",
         "symfony/yaml": "*"
     },
