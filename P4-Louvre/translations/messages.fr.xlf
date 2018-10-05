@@ -1,0 +1,369 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <!--homepage : index.html.twig-->
+            <trans-unit id="title.homepage">
+                <source>title.homepage</source>
+                <target>Billetterie musée du Louvre</target>
+            </trans-unit>
+            <trans-unit id="bienvenue1.homepage">
+                <source>bienvenue1.homepage</source>
+                <target>Bienvenue sur la billetterie du musée du Louvre</target>
+            </trans-unit>
+            <trans-unit id="bienvenue2.homepage">
+                <source>bienvenue2.homepage</source>
+                <target>Réservez vos billets d'entrée en toute simplicité.</target>
+            </trans-unit>
+            <trans-unit id="btn.tckt">
+                <source>btn.tckt</source>
+                <target>Billetterie</target>
+            </trans-unit>
+            <trans-unit id="btn.price">
+                <source>btn.price</source>
+                <target>Tarifs</target>
+            </trans-unit>
+            <trans-unit id="btn.pratique">
+                <source>btn.pratique</source>
+                <target>Infos pratiques</target>
+            </trans-unit>
+            <trans-unit id="title.tarifs">
+                <source>title.tarifs</source>
+                <target>Tarifs</target>
+            </trans-unit>
+            <trans-unit id="tarif.baby">
+                <source>tarif.baby</source>
+                <target>Tarif bébé</target>
+            </trans-unit>
+            <trans-unit id="text.baby">
+                <source>text.baby</source>
+                <target>Enfant moins de 4 ans</target>
+            </trans-unit>
+            <trans-unit id="tarif.child">
+                <source>tarif.child</source>
+                <target>Tarif enfant</target>
+            </trans-unit>
+            <trans-unit id="text.child">
+                <source>text.child</source>
+                <target>Enfant de 4 à 12 ans</target>
+            </trans-unit>
+            <trans-unit id="tarif.normal">
+                <source>tarif.normal</source>
+                <target>Tarif normal</target>
+            </trans-unit>
+            <trans-unit id="text.normal">
+                <source>text.normal</source>
+                <target>à partir de 12 ans</target>
+            </trans-unit>
+            <trans-unit id="tarif.senior">
+                <source>tarif.senior</source>
+                <target>Tarif senior</target>
+            </trans-unit>
+            <trans-unit id="text.senior">
+                <source>text.senior</source>
+                <target>à partir de 60ans</target>
+            </trans-unit>
+            <trans-unit id="tarif.reduit">
+                <source>tarif.reduit</source>
+                <target>Tarif réduit</target>
+            </trans-unit>
+            <trans-unit id="text.reduit">
+                <source>text.reduit</source>
+                <target>étudiant, employé du musée,
+                    d’un service du Ministère de la Culture, militaire…sur présentation d'un justificatif à l'entrée du musée</target>
+            </trans-unit>
+            <trans-unit id="title.horaires">
+                <source>title.horaires</source>
+                <target>Ouverture du musée</target>
+            </trans-unit>
+            <trans-unit id="horaire.lundi">
+                <source>horaire.lundi</source>
+                <target>Lundi : 9 h - 18 h</target>
+            </trans-unit>
+            <trans-unit id="horaire.mardi">
+                <source>horaire.mardi</source>
+                <target>Mardi : Fermé</target>
+            </trans-unit>
+            <trans-unit id="horaire.mercredi">
+                <source>horaire.mercredi</source>
+                <target>Mercredi : 9 h - 21h45</target>
+            </trans-unit>
+            <trans-unit id="horaire.jeudi">
+                <source>horaire.jeudi</source>
+                <target>Jeudi : 9 h - 18 h</target>
+            </trans-unit>
+            <trans-unit id="horaire.vendredi">
+                <source>horaire.vendredi</source>
+                <target>Vendredi : 9 h - 21h45</target>
+            </trans-unit>
+            <trans-unit id="horaire.samedi">
+                <source>horaire.samedi</source>
+                <target>Samedi : 9 h - 18 h</target>
+            </trans-unit>
+            <trans-unit id="horaire.dimanche">
+                <source>horaire.dimanche</source>
+                <target>Dimanche : 9 h - 18 h</target>
+            </trans-unit>
+            <trans-unit id="horaire.info">
+                <source>horaire.info</source>
+                <target>Le musée est fermé les 1er mai, 1er novembre et 25 décembre.</target>
+            </trans-unit>
+            <trans-unit id="contact.info1">
+                <source>contact.info1</source>
+                <target>Pour les tarifs groupe >10 visiteurs,</target>
+            </trans-unit>
+            <trans-unit id="contact.info2">
+                <source>contact.info2</source>
+                <target>nous contacter :</target>
+            </trans-unit>
+
+
+            <!--base.html.twig : header et footer-->
+            <trans-unit id="header.home">
+                <source>header.home</source>
+                <target>Accueil</target>
+            </trans-unit>
+            <trans-unit id="header.ticket">
+                <source>header.ticket</source>
+                <target>Billetterie</target>
+            </trans-unit>
+            <trans-unit id="body.language.french">
+                <source>body.language.french</source>
+                <target>Français</target>
+            </trans-unit>
+            <trans-unit id="body.language.english">
+                <source>body.language.english</source>
+                <target>Anglais</target>
+            </trans-unit>
+            <trans-unit id="footer.mus">
+                <source>footer.mus</source>
+                <target>Musée du Louvre</target>
+            </trans-unit>
+            <trans-unit id="footer.ml">
+                <source>footer.ml</source>
+                <target>Mentions légales</target>
+            </trans-unit>
+            <trans-unit id="footer.cgv">
+                <source>footer.cgv</source>
+                <target>CGV</target>
+            </trans-unit>
+
+            <!--formbooking.html.twig-->
+            <trans-unit id="title.booking">
+                <source>title.booking</source>
+                <target>Ma commande de billets</target>
+            </trans-unit>
+            <trans-unit id="error.dateVisit.date">
+                <source>error.dateVisit.date</source>
+                <target>Nous sommes désolés, vous ne pouvez pas visiter le Louvre à ces dates ! (mardi et jours fériés)</target>
+            </trans-unit>
+            <trans-unit id="error.booking.hour">
+                <source>error.booking.hour</source>
+                <target>Impossible de commander un billet Journée après 14h !</target>
+            </trans-unit>
+            <trans-unit id="booking.info1">
+                <source>booking.info1</source>
+                <target>* Le musée est ouvert tous les jours sauf le mardi (et fermé les 1er mai, 1er novembre et 25 décembre).</target>
+            </trans-unit>
+            <trans-unit id="booking.info2">
+                <source>booking.info2</source>
+                <target>* Cette adresse mail servira pour la réception de vos billets.</target>
+            </trans-unit>
+            <trans-unit id="booking.flash">
+                <source>booking.flash</source>
+                <target>Merci de remplir le/les formulaire(s) pour chacun de vos visiteurs</target>
+            </trans-unit>
+            <trans-unit id="title.visitor">
+                <source>title.visitor</source>
+                <target>Visiteur(s)</target>
+            </trans-unit>
+            <trans-unit id="reduit.info">
+                <source>reduit.info</source>
+                <target>* Tarif réduit sur présentation de votre justificatif à l'entrée du musée</target>
+            </trans-unit>
+            <trans-unit id="title.panier">
+                <source>title.panier</source>
+                <target>Mon panier</target>
+            </trans-unit>
+            <trans-unit id="date.panier">
+                <source>date.panier</source>
+                <target>Date de votre visite :</target>
+            </trans-unit>
+            <trans-unit id="dispo.panier">
+                <source>dispo.panier</source>
+                <target>Places disponibles :</target>
+            </trans-unit>
+            <trans-unit id="typvisit.panier">
+                <source>typvisit.panier</source>
+                <target>Type de visite :</target>
+            </trans-unit>
+            <trans-unit id="nb.panier">
+                <source>nb.panier</source>
+                <target>Nombre de billets :</target>
+            </trans-unit>
+            <trans-unit id="btnpayment.booking">
+                <source>btnpayment.booking</source>
+                <target>Accéder au paiement</target>
+            </trans-unit>
+            <trans-unit id="titlewidget.error">
+                <source>titlewidget.error</source>
+                <target>Réservation impossible</target>
+            </trans-unit>
+            <trans-unit id="error.booking.journey">
+                <source>error.booking.journey</source>
+                <target>Nous sommes désolés, impossible de commander un billet journée après 14h !</target>
+            </trans-unit>
+            <trans-unit id="error.booking.stock">
+                <source>error.booking.stock</source>
+                <target>Nous sommes désolés, nous n'avons plus de billets en stock pour cette date de visite !</target>
+            </trans-unit>
+
+
+
+            <!--payment.html.twig-->
+            <trans-unit id="title.payment">
+                <source>title.payment</source>
+                <target>Récapitulatif de votre commande</target>
+            </trans-unit>
+            <trans-unit id="title.ref">
+                <source>title.ref</source>
+                <target>Votre commande porte la référence</target>
+            </trans-unit>
+            <trans-unit id="title.typevisit">
+                <source>title.typevisit</source>
+                <target>Type de visite :</target>
+            </trans-unit>
+            <trans-unit id="title.listvisitors">
+                <source>title.listvisitors</source>
+                <target>La liste des visiteurs est la suivante :</target>
+            </trans-unit>
+            <trans-unit id="name">
+                <source>name</source>
+                <target>Nom :</target>
+            </trans-unit>
+            <trans-unit id="firstname">
+                <source>firstname</source>
+                <target>Prénom :</target>
+            </trans-unit>
+            <trans-unit id="old">
+                <source>old</source>
+                <target>Age :</target>
+            </trans-unit>
+            <trans-unit id="years">
+                <source>year</source>
+                <target>ans,</target>
+            </trans-unit>
+            <trans-unit id="price">
+                <source>price</source>
+                <target>Tarif :</target>
+            </trans-unit>
+            <trans-unit id="reduct">
+                <source>reduct</source>
+                <target>Tarif réduit :</target>
+            </trans-unit>
+            <trans-unit id="yes">
+                <source>yes</source>
+                <target>Oui</target>
+            </trans-unit>
+            <trans-unit id="no">
+                <source>no</source>
+                <target>Non</target>
+            </trans-unit>
+            <trans-unit id="title.total">
+                <source>title.total</source>
+                <target>Le montant total de votre commande est de :</target>
+            </trans-unit>
+            <trans-unit id="btn.payment">
+                <source>btn.payment</source>
+                <target>Payer ma commande</target>
+            </trans-unit>
+            <trans-unit id="btn.home">
+                <source>btn.home</source>
+                <target>Retour accueil</target>
+            </trans-unit>
+            <trans-unit id="btn.stripe">
+                <source>btn.stripe</source>
+                <target>Payer</target>
+            </trans-unit>
+            <trans-unit id="title.date">
+                <source>title.date</source>
+                <target>Date de votre visite : le</target>
+            </trans-unit>
+            <trans-unit id="name.museum">
+                <source>name.museum</source>
+                <target>Musée-du-Louvre</target>
+            </trans-unit>
+            <trans-unit id="name.site">
+                <source>name.site</source>
+                <target>Billetterie</target>
+            </trans-unit>
+            <trans-unit id="payment.ok">
+                <source>payment.ok</source>
+                <target>Votre paiement a bien été accepté, vous allez recevoir un mail avec votre billet d'entrée d'ici quelques instants.</target>
+            </trans-unit>
+            <trans-unit id="payment.ko">
+                <source>payment.ko</source>
+                <target>Désolé votre paiement n'a pas été accepté, veuillez réessayer de nouveau.</target>
+            </trans-unit>
+
+
+            <!--sendBooking.html.twig-->
+            <trans-unit id="send.valid">
+                <source>send.valid</source>
+                <target>Bravo ! Nous avons bien reçu votre réglement de</target>
+            </trans-unit>
+            <trans-unit id="send.accueil">
+                <source>send.accueil</source>
+                <target>Voici votre billet d'entrée à présenter à l'entrée du musée :</target>
+            </trans-unit>
+            <trans-unit id="send.code">
+                <source>send.code</source>
+                <target>Code de réservation :</target>
+            </trans-unit>
+            <trans-unit id="send.date">
+                <source>send.date</source>
+                <target>Nous vous attendons le</target>
+            </trans-unit>
+            <trans-unit id="send.visit">
+                <source>send.visit</source>
+                <target>Pour une visite :</target>
+            </trans-unit>
+            <trans-unit id="type.jour">
+                <source>type.jour</source>
+                <target>Journée</target>
+            </trans-unit>
+            <trans-unit id="type.djour">
+                <source>type.djour</source>
+                <target>Demi-journée</target>
+            </trans-unit>
+            <trans-unit id="heure.jour">
+                <source>heure.jour</source>
+                <target>à partir de 9h !</target>
+            </trans-unit>
+            <trans-unit id="heure.djour">
+                <source>heure.djour</source>
+                <target>à partir de 14h !</target>
+            </trans-unit>
+            <trans-unit id="send.visitors">
+                <source>send.visitors</source>
+                <target>Les visiteurs sont les suivants :</target>
+            </trans-unit>
+            <trans-unit id="send.justif">
+                <source>send.justif</source>
+                <target>(n'oubliez pas votre justificatif de réduction : carte étudiant, employé du musée, d’un service du Ministère de la Culture, militaire…)</target>
+            </trans-unit>
+
+            <!--service sendmail.php-->
+            <trans-unit id="mail.title">
+                <source>mail.title</source>
+                <target>Votre commande</target>
+            </trans-unit>
+            <trans-unit id="mail.subject">
+                <source>mail.subject</source>
+                <target>Musée du Louvre : confirmation de commande</target>
+            </trans-unit>
+
+
+        </body>
+    </file>
+</xliff>

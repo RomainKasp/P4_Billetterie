@@ -10,7 +10,10 @@
     <div class="container">
 
         {# src/OC/PlatformBundle/Resources/views/formStep1.html.twig #}
-        <h1>> <span class="stepActu">Etape 1</span> > Etape 2 > Etape 3</h1>
+        <h1>> <span class="stepActu">{{ 'date.panier'|trans }}</span> > Etape 2 > Etape 3</h1>
+
+		<a href="{{ path('step1', {'_locale': 'fr'}) }}">Site en fr</a> <br>
+		<a href="{{ path('step1', {'_locale': 'en'}) }}">Site en en</a> <br>
 
 		<br /> {{ message|raw }}
         {{ form_start(form) }}

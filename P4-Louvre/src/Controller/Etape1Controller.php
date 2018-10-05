@@ -20,7 +20,7 @@ class Etape1Controller extends Controller
     }	
 	
     /**
-     * @Route("/", name="step1")
+     * @Route("/paie/toto/{_locale}", defaults={"_locale": "fr"}, requirements={"_locale": "en|fr"}, name="step1")
      */
     public function index(Request $request)
     {

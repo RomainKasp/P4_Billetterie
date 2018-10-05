@@ -1,0 +1,366 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <!--homepage : index.html.twig-->
+            <trans-unit id="title.homepage">
+                <source>title.homepage</source>
+                <target>Ticket Office of the Louvre Museum</target>
+            </trans-unit>
+            <trans-unit id="bienvenue1.homepage">
+                <source>bienvenue1.homepage</source>
+                <target>Welcome to the ticket office of the Louvre Museum</target>
+            </trans-unit>
+            <trans-unit id="bienvenue2.homepage">
+                <source>bienvenue2.homepage</source>
+                <target>Book your entrance tickets with ease.</target>
+            </trans-unit>
+            <trans-unit id="btn.tckt">
+                <source>btn.tckt</source>
+                <target>Ticketing</target>
+            </trans-unit>
+            <trans-unit id="btn.price">
+                <source>btn.price</source>
+                <target>Prices</target>
+            </trans-unit>
+            <trans-unit id="btn.pratique">
+                <source>btn.pratique</source>
+                <target>Pratical infos</target>
+            </trans-unit>
+            <trans-unit id="title.tarifs">
+                <source>title.tarifs</source>
+                <target>Prices</target>
+            </trans-unit>
+            <trans-unit id="tarif.baby">
+                <source>tarif.baby</source>
+                <target>Baby price</target>
+            </trans-unit>
+            <trans-unit id="text.baby">
+                <source>text.baby</source>
+                <target>Child under 4 years</target>
+            </trans-unit>
+            <trans-unit id="tarif.child">
+                <source>tarif.child</source>
+                <target>Child price</target>
+            </trans-unit>
+            <trans-unit id="text.child">
+                <source>text.child</source>
+                <target>Child from 4 to 12 years</target>
+            </trans-unit>
+            <trans-unit id="tarif.normal">
+                <source>tarif.normal</source>
+                <target>Normal price</target>
+            </trans-unit>
+            <trans-unit id="text.normal">
+                <source>text.normal</source>
+                <target>from 12 years old</target>
+            </trans-unit>
+            <trans-unit id="tarif.senior">
+                <source>tarif.senior</source>
+                <target>Senior Price</target>
+            </trans-unit>
+            <trans-unit id="text.senior">
+                <source>text.senior</source>
+                <target>from 60 years</target>
+            </trans-unit>
+            <trans-unit id="tarif.reduit">
+                <source>tarif.reduit</source>
+                <target>Reduct price</target>
+            </trans-unit>
+            <trans-unit id="text.reduit">
+                <source>text.reduit</source>
+                <target>student, museum employee,
+                    a department of the Ministry of Culture, military ... on presentation of a proof at the entrance of the museum</target>
+            </trans-unit>
+            <trans-unit id="title.horaires">
+                <source>title.horaires</source>
+                <target>Museum schedules</target>
+            </trans-unit>
+            <trans-unit id="horaire.lundi">
+                <source>horaire.lundi</source>
+                <target>Monday: 9 am - 6 pm</target>
+            </trans-unit>
+            <trans-unit id="horaire.mardi">
+                <source>horaire.mardi</source>
+                <target>Tuesday: Closed</target>
+            </trans-unit>
+            <trans-unit id="horaire.mercredi">
+                <source>horaire.mercredi</source>
+                <target>Wednesday: 9 am - 9:45 pm</target>
+            </trans-unit>
+            <trans-unit id="horaire.jeudi">
+                <source>horaire.jeudi</source>
+                <target>Thursday: 9 am - 6 pm</target>
+            </trans-unit>
+            <trans-unit id="horaire.vendredi">
+                <source>horaire.vendredi</source>
+                <target>Friday: 9 am - 9:45 pm</target>
+            </trans-unit>
+            <trans-unit id="horaire.samedi">
+                <source>horaire.samedi</source>
+                <target>Saturday: 9 am - 6 pm</target>
+            </trans-unit>
+            <trans-unit id="horaire.dimanche">
+                <source>horaire.dimanche</source>
+                <target>Sunday: 9 am - 6 pm</target>
+            </trans-unit>
+            <trans-unit id="horaire.info">
+                <source>horaire.info</source>
+                <target>The museum is closed on May 1st, November 1st and December 25th.</target>
+            </trans-unit>
+            <trans-unit id="contact.info1">
+                <source>contact.info1</source>
+                <target>For group rates> 10 visitors,</target>
+            </trans-unit>
+            <trans-unit id="contact.info2">
+                <source>contact.info2</source>
+                <target>Contact us :</target>
+            </trans-unit>
+
+
+            <!--base.html.twig : header et footer-->
+            <trans-unit id="header.home">
+                <source>header.home</source>
+                <target>Home</target>
+            </trans-unit>
+            <trans-unit id="header.ticket">
+                <source>header.ticket</source>
+                <target>Ticketing</target>
+            </trans-unit>
+            <trans-unit id="body.language.french">
+                <source>body.language.french</source>
+                <target>French</target>
+            </trans-unit>
+            <trans-unit id="body.language.english">
+                <source>body.language.english</source>
+                <target>English</target>
+            </trans-unit>
+            <trans-unit id="footer.mus">
+                <source>footer.mus</source>
+                <target>Louvre Museum</target>
+            </trans-unit>
+            <trans-unit id="footer.ml">
+                <source>footer.ml</source>
+                <target>Legal Notice</target>
+            </trans-unit>
+            <trans-unit id="footer.cgv">
+                <source>footer.cgv</source>
+                <target>Terms of Sales</target>
+            </trans-unit>
+
+            <!--formbooking.html.twig-->
+            <trans-unit id="title.booking">
+                <source>title.booking</source>
+                <target>My ticket order</target>
+            </trans-unit>
+            <trans-unit id="error.dateVisit.date">
+                <source>error.dateVisit.date</source>
+                <target>Sorry, you can not visit the Louvre on these dates! (Tuesday and holidays)</target>
+            </trans-unit>
+            <trans-unit id="error.booking.hour">
+                <source>error.booking.hour</source>
+                <target>Can not order a day ticket after 14pm</target>
+            </trans-unit>
+            <trans-unit id="booking.info1">
+                <source>booking.info1</source>
+                <target>* The museum is open every day except Tuesdays (and closed on May 1st, November 1st and December 25th).</target>
+            </trans-unit>
+            <trans-unit id="booking.info2">
+                <source>booking.info2</source>
+                <target>* This email address will be used to receive your tickets.</target>
+            </trans-unit>
+            <trans-unit id="booking.flash">
+                <source>booking.flash</source>
+                <target>Please fill out the form (s) for each of your visitors</target>
+            </trans-unit>
+            <trans-unit id="title.visitor">
+                <source>title.visitor</source>
+                <target>Visitor(s)</target>
+            </trans-unit>
+            <trans-unit id="reduit.info">
+                <source>reduit.info</source>
+                <target>* Reduced price on presentation of your proof at the entrance of the museum</target>
+            </trans-unit>
+            <trans-unit id="title.panier">
+                <source>title.panier</source>
+                <target>My cart</target>
+            </trans-unit>
+            <trans-unit id="date.panier">
+                <source>date.panier</source>
+                <target>Date of your visit :</target>
+            </trans-unit>
+            <trans-unit id="dispo.panier">
+                <source>dispo.panier</source>
+                <target>Available seats :</target>
+            </trans-unit>
+            <trans-unit id="typvisit.panier">
+                <source>typvisit.panier</source>
+                <target>Type of visit :</target>
+            </trans-unit>
+            <trans-unit id="nb.panier">
+                <source>nb.panier</source>
+                <target>Number of tickets :</target>
+            </trans-unit>
+            <trans-unit id="btnpayment.booking">
+                <source>btnpayment.booking</source>
+                <target>Access the payment</target>
+            </trans-unit>
+            <trans-unit id="titlewidget.error">
+                <source>titlewidget.error</source>
+                <target>Impossible booking</target>
+            </trans-unit>
+            <trans-unit id="error.booking.journey">
+                <source>error.booking.journey</source>
+                <target>Sorry, can not order a day ticket after 2pm !</target>
+            </trans-unit>
+            <trans-unit id="error.booking.stock">
+                <source>error.booking.stock</source>
+                <target>Sorry, we have no more tickets in stock for this date !</target>
+            </trans-unit>
+
+            <!--payment.html.twig-->
+            <trans-unit id="title.payment">
+                <source>title.payment</source>
+                <target>Summary of your order</target>
+            </trans-unit>
+            <trans-unit id="title.ref">
+                <source>title.ref</source>
+                <target>Your order has the reference</target>
+            </trans-unit>
+            <trans-unit id="title.date">
+                <source>title.date</source>
+                <target>Date of your visit :</target>
+            </trans-unit>
+            <trans-unit id="title.typevisit">
+                <source>title.typevisit</source>
+                <target>Type of visit :</target>
+            </trans-unit>
+            <trans-unit id="title.listvisitors">
+                <source>title.listvisitors</source>
+                <target>The list of visitors is as follows:</target>
+            </trans-unit>
+            <trans-unit id="name">
+                <source>name</source>
+                <target>Name :</target>
+            </trans-unit>
+            <trans-unit id="firstname">
+                <source>firstname</source>
+                <target>First Name :</target>
+            </trans-unit>
+            <trans-unit id="old">
+                <source>old</source>
+                <target>His age :</target>
+            </trans-unit>
+            <trans-unit id="years">
+                <source>year</source>
+                <target>years,</target>
+            </trans-unit>
+            <trans-unit id="price">
+                <source>price</source>
+                <target>Price :</target>
+            </trans-unit>
+            <trans-unit id="reduct">
+                <source>reduct</source>
+                <target>Reduct price :</target>
+            </trans-unit>
+            <trans-unit id="yes">
+                <source>yes</source>
+                <target>Yes</target>
+            </trans-unit>
+            <trans-unit id="no">
+                <source>no</source>
+                <target>No</target>
+            </trans-unit>
+            <trans-unit id="title.total">
+                <source>title.total</source>
+                <target>The total amount of your order is :</target>
+            </trans-unit>
+            <trans-unit id="btn.payment">
+                <source>btn.payment</source>
+                <target>Pay my order</target>
+            </trans-unit>
+            <trans-unit id="btn.home">
+                <source>btn.home</source>
+                <target>Home page</target>
+            </trans-unit>
+            <trans-unit id="btn.stripe">
+                <source>btn.stripe</source>
+                <target>Pay</target>
+            </trans-unit>
+            <trans-unit id="name.museum">
+                <source>name.museum</source>
+                <target>Louvre-Museum</target>
+            </trans-unit>
+            <trans-unit id="name.site">
+                <source>name.site</source>
+                <target>Ticketing</target>
+            </trans-unit>
+            <trans-unit id="payment.ok">
+                <source>payment.ok</source>
+                <target>Your payment has been accepted, you will receive an email with your ticket in a few moments.</target>
+            </trans-unit>
+            <trans-unit id="payment.ko">
+                <source>payment.ko</source>
+                <target>Sorry your payment has not been accepted, please try again.</target>
+            </trans-unit>
+
+            <!--sendBooking.html.twig-->
+            <trans-unit id="send.valid">
+                <source>send.valid</source>
+                <target>Congratulations ! We have received your payment of</target>
+            </trans-unit>
+            <trans-unit id="send.accueil">
+                <source>send.accueil</source>
+                <target>Here is your entrance ticket to present at the entrance of the museum :</target>
+            </trans-unit>
+            <trans-unit id="send.code">
+                <source>send.code</source>
+                <target>Booking Code :</target>
+            </trans-unit>
+            <trans-unit id="send.date">
+                <source>send.date</source>
+                <target>We are waiting for you</target>
+            </trans-unit>
+            <trans-unit id="send.visit">
+                <source>send.visit</source>
+                <target>For a visit :</target>
+            </trans-unit>
+            <trans-unit id="type.jour">
+                <source>type.jour</source>
+                <target>Day</target>
+            </trans-unit>
+            <trans-unit id="type.djour">
+                <source>type.djour</source>
+                <target>Half day</target>
+            </trans-unit>
+            <trans-unit id="heure.jour">
+                <source>heure.jour</source>
+                <target>from 9am !</target>
+            </trans-unit>
+            <trans-unit id="heure.djour">
+                <source>heure.djour</source>
+                <target>from 2pm!</target>
+            </trans-unit>
+            <trans-unit id="send.visitors">
+                <source>send.visitors</source>
+                <target>The visitors are :</target>
+            </trans-unit>
+            <trans-unit id="send.justif">
+                <source>send.justif</source>
+                <target>(do not forget your proof of reduction: student card, museum employee, a department of the Ministry of Culture, military ...)</target>
+            </trans-unit>
+
+            <!--service sendmail.php-->
+            <trans-unit id="mail.title">
+                <source>mail.title</source>
+                <target>Your order</target>
+            </trans-unit>
+            <trans-unit id="mail.subject">
+                <source>mail.subject</source>
+                <target>Louvre Museum : order confirmation</target>
+            </trans-unit>
+
+
+        </body>
+    </file>
+</xliff>
