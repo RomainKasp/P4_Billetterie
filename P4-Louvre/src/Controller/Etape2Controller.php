@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Service\DateHeure;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
@@ -25,20 +26,16 @@ class Etape2Controller extends Controller
     /**
      * @Route("/{_locale}/tickets", name="step2")
      */
-    public function index(Request $request)
+    public function index(Request $request, DateHeure $dateHeure)
     {
-		$nbrTicke= $this->session->get('nbrTicke');
 		$commande = $this->session->get('commande');
-		$dateHeure = new \DateTime();
-		$dateHeure->setTimezone(new \DateTimeZone('Europe/Paris'));
-		$demiJournee = false;
 	
 		if (is_null($commande)) {
 		    return $this->redirectToRoute('step1');
         }
 	
 		if ($commande->getDateVisite() == $commande->getDateCommande()){
-			if ($dateHeure->format("H") > 13)
+			if ($dateHeure->control())
 				$demiJournee = True;
 		}
 		
@@ -51,8 +48,8 @@ class Etape2Controller extends Controller
 		
         return $this->render('etape2/index.html.twig', [
 			'form' => $form->createView(),
-			'nb_tickets' 	=> $nbrTicke,
-			'demiJournee' 	=> $demiJournee,
+			'nb_tickets' 	=> $this->session->get('nbrTicke'),
+			'demiJournee' 	=> $dateHeure->control(),
         ]);
     }
 }

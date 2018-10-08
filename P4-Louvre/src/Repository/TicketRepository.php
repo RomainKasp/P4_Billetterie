@@ -4,7 +4,6 @@ namespace App\Repository;
 
 use App\Entity\Ticket;
 use App\Entity\Commande;
-use App\Repository\CommandeRepository;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
@@ -30,7 +29,7 @@ class TicketRepository extends ServiceEntityRepository
     {
 		$nbr=$this->createQueryBuilder('t')
 			->select('count(t.id)')
-		  	->innerjoin('App\Entity\Commande','c','WITH','c.dateVisite = :dateVisite')
+		  	->innerjoin(Commande::class,'c','WITH','c.dateVisite = :dateVisite')
             ->andWhere('c.id = t.commande')
             ->setParameter('dateVisite', $dateVisite)
             ->getQuery()

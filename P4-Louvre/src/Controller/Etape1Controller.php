@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use App\Service\Etape1Render;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -30,9 +30,8 @@ class Etape1Controller extends Controller
     /**
      * @Route("/{_locale}/", name="step1")
      */
-    public function index(Request $request)
+    public function index(Request $request, $messageErreur, Etape1Render $etape1Render)
     {
-		$message = "";
 		$commande = new Commande();
 	
 		$form = $this->createForm(CommandeType::class, $commande)->handleRequest($request);
@@ -40,14 +39,8 @@ class Etape1Controller extends Controller
 
 		if ($resultHandler==0)
 			return $this->redirectToRoute('step2');
-		else if ($resultHandler > 100){
-			$messages = $this->getParameter('messageErreur');
-			$message = $messages[$resultHandler];
+		else {
+		    return $etape1Render->render($messageErreur, $form, $resultHandler);
 		}
-				
-        return $this->render('etape1/index.html.twig', [
-			'message' => $message,
-			'form' => $form->createView(),
-        ]);
     }
 }

@@ -39,5 +39,6 @@ $container->setParameter('messageErreur',[	101 => "Nombre de place desirée inco
 											102 => "Nombre de places disponibles insuffisantes pour cette date de visite.<br /> Veuillez choisir une autre date.<br /><br />",     
 											103 => "Date de commande incorrecte",     
 											104 => "Le musée est fermé le mardi.<br /> Veuillez choisir une autre date.<br /><br />",     
-											105 => "Jour ferié.<br /> Veuillez choisir une autre date.<br /><br />",     
+											105 => "Jour ferié.<br /> Veuillez choisir une autre date.<br /><br />",
+                                            1 => null,
 										]);										
