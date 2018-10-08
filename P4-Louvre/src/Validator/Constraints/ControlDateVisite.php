@@ -7,5 +7,5 @@ use Symfony\Component\Validator\Constraint;
  */
 class ControlDateVisite extends Constraint
 {
-    public $message = '"{{ string }}"Veuillez saisir une autre date de visite.';
+    public $message = 'erreur.dateVisite';
 }

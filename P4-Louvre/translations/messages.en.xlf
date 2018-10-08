@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <!--Technique-->
+            <trans-unit id="tec.lang">
+                <source>tec.lang</source>
+                <target>en</target>
+            </trans-unit>
+
+            <!--Tronc commun-->
+            <trans-unit id="commun.titre1">
+                <source>commun.titre1</source>
+                <target>Step 1</target>
+            </trans-unit>
+            <trans-unit id="commun.titre2">
+                <source>commun.titre2</source>
+                <target>Step 2</target>
+            </trans-unit>
+            <trans-unit id="commun.titre3">
+                <source>commun.titre3</source>
+                <target>Step 3</target>
+            </trans-unit>
+            <trans-unit id="commun.btnSuiv">
+                <source>commun.btnSuiv</source>
+                <target>Next step</target>
+            </trans-unit>
+
+            <!--Etape 1-->
+            <trans-unit id="step1.mail">
+                <source>step1.mail</source>
+                <target>Your mail:</target>
+            </trans-unit>	
+            <trans-unit id="step1.nbTick">
+                <source>step1.nbTick</source>
+                <target>Number of tickets:</target>
+            </trans-unit>		
+            <trans-unit id="step1.dateVisite">
+                <source>step1.dateVisite</source>
+                <target>Date of the visit:</target>
+            </trans-unit>
+			
+            <!--Etape 2-->
+            <trans-unit id="step2.nom">
+                <source>step2.nom</source>
+                <target>Name:</target>
+            </trans-unit>	
+            <trans-unit id="step2.prenom">
+                <source>step2.prenom</source>
+                <target>First name: </target>
+            </trans-unit>	
+            <trans-unit id="step2.ddn">
+                <source>step2.ddn</source>
+                <target>Birth date: </target>
+            </trans-unit>	
+            <trans-unit id="step2.pays">
+                <source>step2.pays</source>
+                <target>Country: </target>
+            </trans-unit>	
+            <trans-unit id="step2.demijournee">
+                <source>step2.demijournee</source>
+                <target>Half day </target>
+            </trans-unit>	
+            <trans-unit id="step2.tarifReduit">
+                <source>step2.tarifReduit</source>
+                <target>Reduced price? </target>
+            </trans-unit>		
+            <trans-unit id="step2.tarifReduit.info1">
+                <source>step2.tarifReduit.info1</source>
+                <target>In order to benefit from the reduced rate,</target>
+            </trans-unit>			
+            <trans-unit id="step2.tarifReduit.info2">
+                <source>step2.tarifReduit.info2</source>
+                <target>the presentation of a student card, military or equivalent</target>
+            </trans-unit>			
+            <trans-unit id="step2.tarifReduit.info3">
+                <source>step2.tarifReduit.info3</source>
+                <target> when entering will be necessary.</target>
+            </trans-unit>	
+			
+            <!--Etape 3-->
+            <trans-unit id="step3.payer">
+                <source>step3.payer</source>
+                <target>Pay with card</target>	
+			</trans-unit>
+            <trans-unit id="step3.musee">
+                <source>step3.musee</source>
+                <target>Louvre Museum</target>	
+			</trans-unit>
+            <trans-unit id="step3.description">
+                <source>step3.description</source>
+                <target>Internet ticket sale</target>	
+			</trans-unit>
+			
+            <!--Calculs-->
+            <trans-unit id="calc.nom">
+                <source>calc.nom</source>
+                <target>Name</target>
+            </trans-unit>	
+            <trans-unit id="calc.tarif">
+                <source>calc.tarif</source>
+                <target>Rate</target>
+            </trans-unit>			
+            <trans-unit id="calc.prix">
+                <source>calc.prix</source>
+                <target>Price</target>
+            </trans-unit>	
+			
+            <!--Tarifs-->		
+            <trans-unit id="tarifs.reduit">
+                <source>tarifs.reduit</source>
+                <target>reduced</target>
+            </trans-unit>	
+            <trans-unit id="tarifs.senior">
+                <source>tarifs.senior</source>
+                <target>senior</target>
+            </trans-unit>	
+            <trans-unit id="tarifs.normal">
+                <source>tarifs.normal</source>
+                <target>normal</target>
+            </trans-unit>	
+            <trans-unit id="tarifs.enfant">
+                <source>tarifs.enfant</source>
+                <target>child</target>
+            </trans-unit>	
+            <trans-unit id="tarifs.basage">
+                <source>tarifs.basage</source>
+                <target>young age</target>
+            </trans-unit>	
+			
+            <!--Validation-->		
+            <trans-unit id="valid.titreInvalide">
+                <source>valid.titreInvalide</source>
+                <target>Invalid transaction</target>
+            </trans-unit>		
+            <trans-unit id="valid.titreValide">
+                <source>valid.titreValide</source>
+                <target>Payment received</target>
+            </trans-unit>		
+            <trans-unit id="valid.btnRet">
+                <source>valid.btnRet</source>
+                <target>Return to the payment page</target>
+            </trans-unit>		
+            <trans-unit id="valid.corOk">
+                <source>valid.corOk</source>
+                <target>You will receive by mail your tickets.</target>
+            </trans-unit>		
+			
+            <!--Mail-->		
+            <trans-unit id="mail.objet">
+                <source>mail.objet</source>
+                <target>Louvre Museum - Your Tickets</target>
+            </trans-unit>	
+            <trans-unit id="mail.titre">
+                <source>mail.titre</source>
+                <target>Your order has been taken into account</target>
+            </trans-unit>	
+            <trans-unit id="mail.bonjour">
+                <source>mail.bonjour</source>
+                <target>Hello, </target>
+            </trans-unit>	
+            <trans-unit id="mail.corps1">
+                <source>mail.corps1</source>
+                <target>your order is validated as of </target>
+            </trans-unit>	
+            <trans-unit id="mail.corps2">
+                <source>mail.corps2</source>
+                <target> for your visit </target>
+            </trans-unit>	
+            <trans-unit id="mail.detail">
+                <source>mail.detail</source>
+                <target>Details</target>
+            </trans-unit>		
+            <trans-unit id="mail.numCom">
+                <source>mail.numCom</source>
+                <target>Order number</target>
+            </trans-unit>		
+            <trans-unit id="mail.fin">
+                <source>mail.fin</source>
+                <target>The Louvre museum team thanks you for your order.</target>
+            </trans-unit>	
+        </body>
+    </file>
+</xliff>

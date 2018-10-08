@@ -3,6 +3,8 @@
 namespace App\Repository;
 
 use App\Entity\Ticket;
+use App\Entity\Commande;
+use App\Repository\CommandeRepository;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
@@ -14,37 +16,27 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  */
 class TicketRepository extends ServiceEntityRepository
 {
-    public function __construct(RegistryInterface $registry)
+	private $commande;
+	
+    public function __construct(RegistryInterface $registry, CommandeRepository $commande)
     {
         parent::__construct($registry, Ticket::class);
     }
 
-//    /**
-//     * @return Ticket[] Returns an array of Ticket objects
-//     */
-    /*
-    public function findByExampleField($value)
+    /**
+     * Retourne le nombre de tickets 
+     */	
+    public function nombreTicketParDate($dateVisite) 
     {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('t.id', 'ASC')
-            ->setMaxResults(10)
+		$nbr=$this->createQueryBuilder('t')
+			->select('count(t.id)')
+		  	->innerjoin('App\Entity\Commande','c','WITH','c.dateVisite = :dateVisite')
+            ->andWhere('c.id = t.commande')
+            ->setParameter('dateVisite', $dateVisite)
             ->getQuery()
-            ->getResult()
-        ;
+            ->getOneOrNullResult();
+			
+		if(is_null($nbr))	return 0;
+		else				return $nbr[1];
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Ticket
-    {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

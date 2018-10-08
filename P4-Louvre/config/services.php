@@ -4,18 +4,18 @@
 $container->setParameter('places.journ', 1000);
 
 //Liste les tarifs applicables
-$container->setParameter('tarifReduit', [	"Nom" => "reduit", 
+$container->setParameter('tarifReduit', [	"Nom" => "tarifs.reduit", 
 											"Prix" => "10.00" ,    ]);
-$container->setParameter('tarifs', [	[	"Nom" => "senior",
+$container->setParameter('tarifs', [	[	"Nom" => "tarifs.senior",
 											"AgeMax" => "60",
 											"Prix" => "12.00" , ],
-										[	"Nom" => "normal",
+										[	"Nom" => "tarifs.normal",
 											"AgeMax" => "12", 
 											"Prix" => "16.00" , ],
-										[	"Nom" => "enfant",
+										[	"Nom" => "tarifs.enfant",
 											"AgeMax" => "04", 
 											"Prix" => "08.00" , ],
-										[	"Nom" => "bas-age",
+										[	"Nom" => "tarifs.basage",
 											"AgeMax" => "00", 
 											"Prix" => "00.00" , ],
 									]);

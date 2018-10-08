@@ -10,14 +10,15 @@
     <div class="container">
 
         {# src/OC/PlatformBundle/Resources/views/formStep1.html.twig #}
-        <h1>> <span class="stepActu">Etape 1</span> > Etape 2 > Etape 3</h1>
+        <h1>> <span class="stepActu">{{'commun.titre1'|trans }}</span> > {{'commun.titre2'|trans }} > {{'commun.titre3'|trans }}</h1>
 
 		<br /> {{ message|raw }}
         {{ form_start(form) }}
 
 		<div class="row">
 			<div class="col-sm-2">
-				{{ form_label(form.mail) }}
+				{{'step1.mail'|trans }}
+				{{ form_errors(form.mail) }}
 			</div>
 			<div class="col-sm-3">
 				{{ form_widget(form.mail) }}
@@ -26,7 +27,8 @@
 		
 		<div class="row">
 			<div class="col-sm-2">
-				{{ form_label(form.number_ticket) }}
+				{{'step1.nbTick'|trans }}
+				{{ form_errors(form.number_ticket) }}
 			</div>
 			<div class="col-sm-1">
 				{{ form_widget(form.number_ticket) }}
@@ -35,7 +37,8 @@
 
 		<div class="row">
 			<div class="col-sm-2">
-				{{ form_label(form.dateVisite) }}
+				{{'step1.dateVisite'|trans }}
+				{{ form_errors(form.dateVisite) }}
 			</div>
 			<div class="col-sm-2">
 				{{ form_widget(form.dateVisite) }}
@@ -45,7 +48,7 @@
 			<div class="col-sm-2">
 			</div>
 			<div class="col-sm-4">
-				<input type="submit" value="Etape suivante"/>
+				<input type="submit" value="{{'commun.btnSuiv'|trans }}"/>
 			</div>
 		</div>
 		<div class="row" style="visibility:hidden">
@@ -55,6 +58,7 @@
 			<div class="col-sm-4">
 				{{ form_errors(form.dateCommande) }}
 				{{ form_widget(form.dateCommande) }}
+				<input type="hidden" id="jsData" value="{{'tec.lang'|trans }}"/>
 			</div>
 		</div>
         {{ form_end(form) }}

@@ -20,7 +20,15 @@ class Etape1Controller extends Controller
     }	
 	
     /**
-     * @Route("/", name="step1")
+     * @Route("/", name="step0")
+     */
+    public function routing()
+    {
+		return $this->redirectToRoute('step1');
+    }	
+	
+    /**
+     * @Route("/{_locale}/", name="step1")
      */
     public function index(Request $request)
     {

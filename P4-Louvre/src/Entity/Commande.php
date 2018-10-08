@@ -23,7 +23,7 @@ class Commande
     /**
      * @ORM\Column(type="string", length=60)
      * @Assert\Email(
-     *     message = "L''email '{{ value }}' n''est pas valide.",
+     *     
      *     checkMX = true
      * )
      */	 
@@ -36,7 +36,7 @@ class Commande
 
     /**
      * @ORM\Column(type="date")
-	 * @ControlDateVisite()
+	 * @ControlDateVisite(message="erreur.dateVisite")
      */
     private $dateVisite;
 

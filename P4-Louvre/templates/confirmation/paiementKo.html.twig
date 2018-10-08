@@ -10,14 +10,14 @@
     <div class="container">
 
         {# src/OC/PlatformBundle/Resources/views/formStep1.html.twig #}
-        <h1>Transaction invalide</h1>
+        <h1>{{'valid.titreInvalide'|trans }}</h1>
 
 		<div class="recap">
 			{{ tabRecap|raw }}
 		</div>
 		
 		<br /> 
-		<center><A href="javascript:history.back()"><button id="btn_bck">Retourner à la page de paiement</button></A></center>
+		<center><A href="javascript:history.back()"><button id="btn_bck">{{'valid.btnRet'|trans }}</button></A></center>
     </div>
 
 {% endblock %}

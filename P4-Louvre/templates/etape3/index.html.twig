@@ -10,7 +10,7 @@
     <div class="container">
 
         {# src/OC/PlatformBundle/Resources/views/formStep1.html.twig #}
-        <h1>> Etape 1> Etape 2 > <span class="stepActu">Etape 3</span></h1>
+        <h1>> {{'commun.titre1'|trans }}> {{'commun.titre2'|trans }} > <span class="stepActu">{{'commun.titre3'|trans }}</span></h1>
 
 		<div class="recap">
 			{{ tabRecap|raw }}
@@ -21,14 +21,14 @@
 				src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 				data-key="pk_test_dS57aJXZLBrqwKQ0g48CV0jC"
 				data-amount="{{ total }}00"
-				data-name="Musée du Louvre"
-				data-description="Vente de billet par internet"
+				data-name="{{'step3.musee'|trans }}"
+				data-description="{{'step3.description'|trans }}"
 				data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSElBhfoEvGjcgcfuj6g8bWKoP1BYb2lAeeA-NvokHFFnpVbuffHQ"
-				data-locale="auto"
+				data-locale="{{ 'tec.lang'|trans }}"
 				data-zip-code="false"
 				data-email="{{ mailCommande }}"
 				data-currency="EUR"
-				data-label = "Payer par CB"
+				data-label = "{{'step3.payer'|trans }}"
 				>
 			  </script>
 			</form>

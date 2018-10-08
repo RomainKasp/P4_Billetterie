@@ -7,10 +7,12 @@
 {% block body %}
 
     <div class="container">
-		<h1>> Etape 1 > <span class="stepActu">Etape 2</span> > Etape 3</h1>
+		<h1>> {{'commun.titre1'|trans }} > <span class="stepActu">{{'commun.titre2'|trans }}</span> > {{'commun.titre3'|trans }}</h1>
 		<div class="well">
-			<div class="info">
-				<br />Afin de béneficier du tarif réduit, <br /> la présentation d'une carte d’étudiant, militaire ou équivalent<br /> lors de l’entrée sera necessaire.<br /><br />
+			<div class="info"> 
+				<br />{{'step2.tarifReduit.info1'|trans }} 
+				<br />{{'step2.tarifReduit.info2'|trans }} 
+				<br />{{'step2.tarifReduit.info3'|trans }} <br /><br />
 			</div>
 			{{ form_start(form) }}
 			<div id="tickets-fields-list" data-prototype="{{ form_widget(form.tickets.vars.prototype)|e }}"
@@ -18,7 +20,7 @@
 	
 				</div>
 			<input type="hidden" id="jsData"  data-list="#tickets-fields-list"/>
-			<input type="submit" value="Etape suivante"/>
+			<input type="submit" value="{{'commun.btnSuiv'|trans }}"/>
 			{{ form_end(form) }}
 		</div>
 	</div>
@@ -41,11 +43,8 @@
 				counter++;
 				list.data(' widget-counter', counter);
 				var newElem = jQuery(list.attr('data-widget-tags')).html(newWidget);
-				//newElem = "<div class='help'>"+newElem+"</div>";
 
-				$("<div class='ticketMEF'>").appendTo(list);
 				newElem.appendTo(list);
-				$("</div>").appendTo(list);
 				
 				var demiJournee = {% if demiJournee %}true{% else %}false{% endif %};
 				

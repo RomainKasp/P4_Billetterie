@@ -2,13 +2,19 @@
 namespace App\Service;
 
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
+use Symfony\Component\Translation\TranslatorInterface;
 use App\Entity\Ticket;
 
 class GestionCalculs
 {
+	private $trans;
 	private $prixTotal;
 	private $tableTarif;
 	private $tableTarifReduit;
+	
+	public function __construct(TranslatorInterface $trans){
+		$this->trans = $trans;
+	}
 	
     public function trtTickets(ParameterBagInterface $parameterBag, $tickets)
     {
@@ -21,7 +27,7 @@ class GestionCalculs
 			$trait = $this->definirTarif($tick);
 			if ($tick->getDemiJournee()){
 				$trait["Prix"] /= 2;
-				$trait["Nom"] .= " (demi-journée)";
+				$trait["Nom"] .= " (".$this->trans->trans('calc.demijour').")";
 			}
 			
 			$this->prixTotal += $trait["Prix"];
@@ -60,12 +66,15 @@ class GestionCalculs
     private function creerTabRecap($recap)
     {
 		$tabRecap = "<table width='70%'>";
-		$tabRecap .= "<tr><th style='text-align:center'>Nom</th><th style='text-align:center'>Tarif</th><th style='text-align:center'>Prix (€)</th></tr>";
+		$transColNom = $this->trans->trans('calc.nom');
+		$transColTar = $this->trans->trans('calc.tarif');
+		$transColPri = $this->trans->trans('calc.prix');
+		$tabRecap .= "<tr><th style='text-align:center'>".$transColNom."</th><th style='text-align:center'>".$transColTar."</th><th style='text-align:center'>".$transColPri." (€)</th></tr>";
 		
 		foreach ($recap AS $ligne){		
 			$tabRecap .= "<tr>";
 			$tabRecap .= "<td style='text-align:center'>". $ligne["Nom"] ." ". $ligne["Prenom"] ."</td>";
-			$tabRecap .= "<td style='text-align:center'>". $ligne["Tarif"] ."</td>";
+			$tabRecap .= "<td style='text-align:center'>". $this->trans->trans($ligne["Tarif"]) ."</td>";
 			$tabRecap .= "<td style='text-align:center'>". $ligne["Prix"] ."</td>";
 			$tabRecap .= "</tr>";
 		}

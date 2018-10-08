@@ -23,7 +23,7 @@ class Etape2Controller extends Controller
     }
 	
     /**
-     * @Route("/tickets", name="step2")
+     * @Route("/{_locale}/tickets", name="step2")
      */
     public function index(Request $request)
     {

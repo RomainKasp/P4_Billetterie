@@ -14,15 +14,15 @@ class TicketType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nom',null,['label' => 'Nom: ' , ])
-            ->add('prenom',null,['label' => 'Prenom: ' , ])
-            ->add('dateNaissance',BirthdayType::class,['label' => 'Date de naissance: ' , ])
-            ->add('nationalite',CountryType::class,[	'label' => 'Pays: ' , 
+            ->add('nom',null,['label' => 'step2.nom' , ])
+            ->add('prenom',null,['label' => 'step2.prenom' , ])
+            ->add('dateNaissance',BirthdayType::class,['label' => 'step2.ddn' , ])
+            ->add('nationalite',CountryType::class,[	'label' => 'step2.pays' , 
 												'preferred_choices' => array('France', 'FR'), ])
-			->add('demiJournee',null,['label' => 'Demi-Journée ' , 
+			->add('demiJournee',null,['label' => 'step2.demijournee' , 
 									  'attr' => ['class' => 'dmiJrn'],
 									  ])
-			->add('tarifReduit',null,['label' => 'Tarif réduit? ' , 
+			->add('tarifReduit',null,['label' => 'step2.tarifReduit' , 
 									  'attr' => ['class' => 'chkBoxTrfRdt'],
 									  ])
         ;

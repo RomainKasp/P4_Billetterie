@@ -3,21 +3,25 @@ namespace App\Service;
 
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use App\Entity\Ticket;
+use Symfony\Component\Translation\TranslatorInterface;
 
 class EnvoiMail
 {
 	private $mailer;
 	private $templating;
+	private $trans;
 	
-    public function __construct(\Swift_Mailer $mailer, \Twig_Environment $templating)
+    public function __construct(\Swift_Mailer $mailer, \Twig_Environment $templating, TranslatorInterface $trans)
     {
         $this->mailer = $mailer;
         $this->templating = $templating;
+        $this->trans = $trans;
     }
 	
     public function send($mailCommande, $dateCommande, $dateVisite, $idCommande, $tabRecap)
     {
-		$message = (new \Swift_Message('Musée du Louvre - Vos Billets'))
+		$objet =  $this->trans->trans('mail.objet');
+		$message = (new \Swift_Message($objet))
 			->setFrom('romain.kasp@gmail.com')
 			->setTo($mailCommande)
 			->setBody(

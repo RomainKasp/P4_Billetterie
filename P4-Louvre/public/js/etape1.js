@@ -12,9 +12,8 @@ date = ann + "-" + mois + "-" + jour;
 document.getElementById("commande_dateCommande").value = date; 	
 
 $( function() {
-
-	
-$( ".js-datepicke" ).datepicker({
+if (document.getElementById("jsData").value == "fr"){
+	$( ".js-datepicke" ).datepicker({
 		altField: ".js-datepicke",
 		closeText: 'Fermer',
 		prevText: 'Précédent',
@@ -28,5 +27,11 @@ $( ".js-datepicke" ).datepicker({
 		weekHeader: 'Semaine',
 		dateFormat: 'yy-mm-dd'
 	});		
-$( ".js-datepicke" ).datepicker( "option", "minDate", new Date() );
+}else if (document.getElementById("jsData").value == "en"){
+	$( ".js-datepicke" ).datepicker({
+		altField: ".js-datepicke",
+		dateFormat: 'yy-mm-dd'
+	});		
+}
+	$( ".js-datepicke" ).datepicker( "option", "minDate", new Date() );
 } );

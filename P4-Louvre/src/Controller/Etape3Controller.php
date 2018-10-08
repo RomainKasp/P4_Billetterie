@@ -23,7 +23,7 @@ class Etape3Controller extends Controller
     }
 	
     /**
-     * @Route("/paiement", name="step3")
+     * @Route("/{_locale}/paiement", name="step3")
      */
     public function index()
     {

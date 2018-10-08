@@ -1,15 +1,15 @@
 
-<h1>Votre commande a bien été prise en compte</h1>
+<h1>{{'mail.titre'|trans }}</h1>
 
-Bonjour, <br /><br />
+{{'mail.bonjour'|trans }}<br /><br />
 
-votre commande est validée en date du {{ datCom }} pour votre visite du {{ datVisite }}.<br />
+{{'mail.corps1'|trans }} {{ datCom }}{{'mail.corps2'|trans }}{{ datVisite }}.<br />
 <br />
-<b><u>Détails</u>:</b><br /><br />
+<b><u>{{'mail.detail'|trans }}</u>:</b><br /><br />
 
-<b>Numéro de la commande :</b> {{ numCom }}<br /> 
+<b>{{'mail.numCom'|trans }} :</b> {{ numCom }}<br /> 
 {{ tabRecap|raw }}
 <br /><br />
-L'équipe du musée du Louvre vous remercie de votre commande.<br />
+{{'mail.fin'|trans }}<br />
 
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSElBhfoEvGjcgcfuj6g8bWKoP1BYb2lAeeA-NvokHFFnpVbuffHQ" width="100">

@@ -27,7 +27,7 @@ class ValidationController extends Controller
     }
 	
     /**
-     * @Route("/validation", name="validatePaiement")
+     * @Route("/{_locale}/validation", name="validatePaiement")
      */
     public function index(Request $request)
     {

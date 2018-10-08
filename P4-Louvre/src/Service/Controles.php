@@ -4,32 +4,23 @@ namespace App\Service;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Commande;
+use App\Repository\TicketRepository;
 
 class Controles
 {
-    private $em;
+    private $repoTick;
 
-    public function __construct(EntityManagerInterface $em)
+    public function __construct(TicketRepository $repoTick)
     {
-        $this->em = $em;
+        $this->repoTick = $repoTick;
     }
 	
     public function ctlPlaces(ContainerInterface $container, $dateVisite, $nbrTickets)
     {
 		$maxPlaces = $container->getParameter('places.journ');	
-		$conn = $this->em->getConnection();
-
-		$sql = 'SELECT COUNT(t.id) AS compteur
-				FROM ticket t
-				INNER JOIN commande c
-				on c.id = t.commande_id
-				WHERE c.date_visite = :dateVisite
-				';
-		$stmt = $conn->prepare($sql);
-		$stmt->execute(['dateVisite' => $dateVisite]);
-		$data=$stmt->fetchAll();
+		$placesReserve = $this->repoTick->nombreTicketParDate($dateVisite); 
 		
-		$test = $data[0]["compteur"] + $nbrTickets;
+		$test = $placesReserve + $nbrTickets;
 
 		if ($test>$maxPlaces) 	return 102;
 		else 					return 0;
