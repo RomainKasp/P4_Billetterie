@@ -35,9 +35,9 @@ $container->setParameter('jourFerier',[	[00,] ,
 										[00,25,] ]);
 // Liste des messages d'erreurs		
 //   possibilité d'ajouter les erreurs propres à chaque plantage de paiement par la suite							
-$container->setParameter('messageErreur',[	101 => "Nombre de place desirée incorrect.",  
-											102 => "Nombre de places disponibles insuffisantes pour cette date de visite.<br /> Veuillez choisir une autre date.<br /><br />",     
-											103 => "Date de commande incorrecte",     
-											104 => "Le musée est fermé le mardi.<br /> Veuillez choisir une autre date.<br /><br />",     
-											105 => "Jour ferié.<br /> Veuillez choisir une autre date.<br /><br />",     
+$container->setParameter('messageErreur',[	101 => "mess.nbrPlace",  
+											102 => "mess.nbrPlace2",     
+											103 => "mess.datComm",     
+											104 => "mess.mardi",     
+											105 => "mess.ferie",     
 										]);										

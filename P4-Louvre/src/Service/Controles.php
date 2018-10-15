@@ -1,6 +1,7 @@
 <?php
 namespace App\Service;
 
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Commande;
@@ -9,15 +10,17 @@ use App\Repository\TicketRepository;
 class Controles
 {
     private $repoTick;
+    private $parameterBag;
 
-    public function __construct(TicketRepository $repoTick)
+    public function __construct(TicketRepository $repoTick, ParameterBagInterface $parameterBag)
     {
         $this->repoTick = $repoTick;
+        $this->parameterBag = $parameterBag;
     }
 	
-    public function ctlPlaces(ContainerInterface $container, $dateVisite, $nbrTickets)
+    public function ctlPlaces($dateVisite, $nbrTickets)
     {
-		$maxPlaces = $container->getParameter('places.journ');	
+		$maxPlaces = $this->parameterBag->get('places.journ');	
 		$placesReserve = $this->repoTick->nombreTicketParDate($dateVisite); 
 		
 		$test = $placesReserve + $nbrTickets;
@@ -33,11 +36,11 @@ class Controles
 			$control = 101;
 		else
 			// Controle de l'espace disponible
-			$control = $this->ctlPlaces($container, $commande->getDateVisite()->format('Y-m-d'), $nbrTickets);
+			$control = $this->ctlPlaces($commande->getDateVisite()->format('Y-m-d'), $nbrTickets);
 		
 		if ($control == 0)
 			// Controle si la date est correcte
-			$control = $this->ctlDate($commande, $container->getParameter('jourFerier'));	
+			$control = $this->ctlDate($commande, $this->parameterBag->get('jourFerier'));	
 		
 		//Retourne un message d'erreur si besoin
 		return $control;
@@ -45,7 +48,6 @@ class Controles
 	
     public function ctlDate(Commande $commande ,$jourFerie)
     {
-		//print_r($commande); die;
 		// Date de commande non passée
 		if ($commande->getDateVisite() < $commande->getDateCommande())
 			return 103;

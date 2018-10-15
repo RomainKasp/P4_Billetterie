@@ -22,7 +22,6 @@ class Etape2FormHandler
     public function handle(FormInterface $form)
     {
 		if ($form->isSubmitted() && $form->isValid()) {	
-			//$this->session = $session;
 			$commande = $form->getData();
 			$this->session->set('commande', $commande);
 			

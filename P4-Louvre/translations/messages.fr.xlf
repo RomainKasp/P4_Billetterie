@@ -182,6 +182,28 @@
             <trans-unit id="mail.fin">
                 <source>mail.fin</source>
                 <target>L'équipe du musée du Louvre vous remercie de votre commande.</target>
+            </trans-unit>		
+			
+            <!--messages-->		
+            <trans-unit id="mess.nbrPlace">
+                <source>mess.nbrPlace</source>
+                <target>Nombre de place desirée incorrect.</target>
+            </trans-unit>		
+            <trans-unit id="mess.nbrPlace2">
+                <source>mess.nbrPlace2</source>
+                <target>Nombre de places disponibles insuffisantes pour cette date de visite. Veuillez choisir une autre date.</target>
+            </trans-unit>		
+            <trans-unit id="mess.datComm">
+                <source>mess.datComm</source>
+                <target>Date de commande incorrecte.</target>
+            </trans-unit>			
+            <trans-unit id="mess.mardi">
+                <source>mess.mardi</source>
+                <target>Le musée est fermé le mardi. Veuillez choisir une autre date.</target>
+            </trans-unit>			
+            <trans-unit id="mess.ferie">
+                <source>mess.ferie</source>
+                <target>Jour ferié. Veuillez choisir une autre date.</target>
             </trans-unit>				
         </body>
     </file>

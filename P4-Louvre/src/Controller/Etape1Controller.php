@@ -9,14 +9,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Entity\Commande;
 use App\Form\CommandeType;
 use App\Handlers\Forms\Etape1FormHandler;
+use Symfony\Component\Translation\TranslatorInterface;
 
 class Etape1Controller extends Controller
 {
     private $etape1FormHandler;
+	private $trans;
 	
-    public function __construct(Etape1FormHandler $etape1FormHandler)
+    public function __construct(Etape1FormHandler $etape1FormHandler, TranslatorInterface $trans)
     {
         $this->etape1FormHandler = $etape1FormHandler;
+		$this->trans = $trans;
     }	
 	
     /**
@@ -46,7 +49,7 @@ class Etape1Controller extends Controller
 		}
 				
         return $this->render('etape1/index.html.twig', [
-			'message' => $message,
+			'message' => $this->trans->trans($message),
 			'form' => $form->createView(),
         ]);
     }

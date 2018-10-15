@@ -178,6 +178,28 @@
             <trans-unit id="mail.fin">
                 <source>mail.fin</source>
                 <target>The Louvre museum team thanks you for your order.</target>
+            </trans-unit>			
+			
+            <!--messages-->		
+            <trans-unit id="mess.nbrPlace">
+                <source>mess.nbrPlace</source>
+                <target>Desired number of places incorrect.</target>
+            </trans-unit>		
+            <trans-unit id="mess.nbrPlace2">
+                <source>mess.nbrPlace2</source>
+                <target>Insufficient places available for this date of visit. Please choose another date.</target>
+            </trans-unit>		
+            <trans-unit id="mess.datComm">
+                <source>mess.datComm</source>
+                <target>Invalid order date.</target>
+            </trans-unit>			
+            <trans-unit id="mess.mardi">
+                <source>mess.mardi</source>
+                <target>The museum is closed on Tuesdays. Please choose another date.</target>
+            </trans-unit>			
+            <trans-unit id="mess.ferie">
+                <source>mess.ferie</source>
+                <target>Public holiday. Please choose another date.</target>
             </trans-unit>	
         </body>
     </file>
